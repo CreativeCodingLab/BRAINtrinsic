@@ -9,7 +9,7 @@ trees can be computed on the fly. This tool has been developed with virtual real
 Head Mounted Displays such as Oculus Rift (both DK1 and DK2).
 
 #How to use it
-The web-based tool is accessible [here](gioconte.github.com). It has been optimized for Google Chrome Browser.
+The web-based tool is accessible [here](http://gioconte.github.com). It has been optimized for Google Chrome Browser.
 Users can upload data and visualize them. All the files needed are in ".csv" format and specifically should be structured are as follows:
 -locations files (4): each of them contains a different file locations. Each row of the file contains three values that represent the x,y,z coordinates. Each value is separated by a coma.
 -network file: this file contains the adjacency matrix of the connectome network. Each value within the same row is separated by a coma. The tool is optimized to deal with weighted graph.
