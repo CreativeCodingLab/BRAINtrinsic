@@ -21,4 +21,4 @@ Before uploading the file, make sure to remove the last blank row of each file, 
 
 The tool was entirely developed by Giorgio Conte who belongs to the [Creative Coding Research Group](https://www.evl.uic.edu/creativecoding/), directed by Prof.
 Angus Forbes. The research group is part of the [Electronic Visualization Lab](https://www.evl.uic.edu) (EVL) at University of Illinois at Chicago (UIC).
-This research is being done in collaboration with Alex Leow, Olusola Ajilore, and Allen Ye, all belonging to UIC Department of Psychiatry.
+This research is being done in collaboration with Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye, all belonging to UIC Department of Psychiatry.
