@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Brain Vis</title>
+</head>
+
+<script type="text/javascript" src="js/utils/parsingData.js"></script>
+<script src="js/external-libraries/queue.js"></script>
+<script>
+
+    loadVisualization = function (folderName) {
+        queue()
+                .defer(setFolder,folderName)
+                .awaitAll( function() {
+                     console.log(folder);
+                });
+    }
+
+</script>
+
+<body>
+<h1>Welcome</h1>
+Click on the name of the dataset to visualize it in a desktop compatible version. If you want to use your Oculus Rift click on
+"Oculus Vx" according to the version of OR you are using. To enable head tracking first download "oculus rest"
+<a href="https://github.com/possan/oculus-rest/">here</a>.
+
+<h2>Upload your Data <a href="upload.html">here</a> </h2>
+
+<h2>Structural Connectome</h2>
+
+<ul>
+    <li>
+        <a onclick="location.href=this.href+'?dataset=Demo1&vr=0&load=0';return false;" href="visualization.html">Complete Connectome</a>
+        &nbsp&nbsp&nbsp
+        <a onclick="location.href=this.href+'?dataset=Demo1&vr=1&load=0';return false;" href="visualization.html">Oculus V1</a>
+        &nbsp&nbsp&nbsp
+        <a onclick="location.href=this.href+'?dataset=Demo1&vr=2&load=0';return false;" href="visualization.html">Oculus V2</a>
+    </li>
+</ul>
+
+</body>
+</html>
