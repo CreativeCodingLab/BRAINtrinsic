@@ -162,6 +162,10 @@ button > input[type="checkbox"]{
     background-color: white;
 }
 
+#black{
+    color: #000000;
+}
+
 .label{
     color: black;
 }
