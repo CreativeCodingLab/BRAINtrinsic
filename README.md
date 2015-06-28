@@ -17,8 +17,18 @@ Users can upload data and visualize them. All the files needed are in ".csv" for
 
 Before uploading the file, make sure to remove the last blank row of each file, otherwise data will not be displayed correctly.
 
+#Virtual Reality instruction
+BRAINtrinsic is fully compatible with both DK1 and DK2 [Oculus Rift device](https://www.oculus.com/).
+To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/tree/master/oculus-rest) (Mac OS only).
+More information about the "oculus-rest" plugin can be found [here](https://github.com/msfeldstein/oculus-rest).
+Now:
+- Plug you HDM to your computer
+- launch the oculus-rest plugin
+- Click [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=1&load=0) for DK1 version or [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=2&load=0) for DK2 demo version. If you want to upload your own data, go to the upload page and
+then select the version of Oculus Rift you are using in the radio button and finally click start.
+
 #Acknoledgement
 
-BRAINtrinsic is the result of collaboration between computer scientists and psychiatrists. Giorgio Conte, who wrote the code of the tool, and Dr. Angus Forbes belong to [Creative Coding Research Group](https://www.evl.uic.edu/creativecoding/)
-which is part of the [Electronic Visualization Lab](https://www.evl.uic.edu) (EVL) at University of Illinois at Chicago (UIC).
-Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye all belong to UIC Department of Psychiatry.
+The tool was entirely developed by Giorgio Conte who belongs to the [Creative Coding Research Group](https://www.evl.uic.edu/creativecoding/), directed by Prof.
+Angus Forbes. The research group is part of the [Electronic Visualization Lab](https://www.evl.uic.edu) (EVL) at University of Illinois at Chicago (UIC).
+This research is being done in collaboration with Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye, all belonging to UIC Department of Psychiatry.
