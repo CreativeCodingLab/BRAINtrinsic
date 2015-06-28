@@ -23,9 +23,9 @@ To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-res
 More information about the "oculus-rest" plugin can be found [here](https://github.com/msfeldstein/oculus-rest).
 Now:
 - Plug you HDM to your computer
-- launch the oculus-rest plugin
+- Launch the oculus-rest plugin
 - Click [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=1&load=0) for DK1 version or [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=2&load=0) for DK2 demo version. If you want to upload your own data, go to the upload page and
-then select the version of Oculus Rift you are using in the radio button and finally click start.
+then select the version of Oculus Rift you are using in the radio button and finally click the "start" button.
 
 #Acknoledgement
 
