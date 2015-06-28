@@ -16,7 +16,7 @@ Users can upload data and visualize them. All the files needed are in ".csv" for
 - labelkey file: each row contains the Freesurfer Id label to which the node belongs.
 
 Before uploading the file, make sure to remove the last blank row of each file, otherwise data will not be displayed correctly.
-
+You can find a correct dataset ready to be uploaded [here](https://github.com/CreativeCodingLab/BRAINtrinsic/tree/gh-pages/data/Demo1).
 #Virtual Reality instruction
 BRAINtrinsic is fully compatible with both DK1 and DK2 [Oculus Rift device](https://www.oculus.com/).
 To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/gh-pages/oculus-rest) (Mac OS only).
