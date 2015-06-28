@@ -19,7 +19,7 @@ Before uploading the file, make sure to remove the last blank row of each file, 
 
 #Virtual Reality instruction
 BRAINtrinsic is fully compatible with both DK1 and DK2 [Oculus Rift device](https://www.oculus.com/).
-To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/tree/master/oculus-rest) (Mac OS only).
+To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/gh-pages/oculus-rest) (Mac OS only).
 More information about the "oculus-rest" plugin can be found [here](https://github.com/msfeldstein/oculus-rest).
 Now:
 - Plug you HDM to your computer
