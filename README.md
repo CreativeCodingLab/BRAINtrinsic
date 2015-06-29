@@ -28,7 +28,7 @@ Now:
 then select the version of Oculus Rift you are using in the radio button and finally click the "start" button.
 
 #Matlab code
-The Matlab code to perform dimensionality data reduction through "Isomap" can be downloaded [here](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/master/Matlab/braintrinsicIsomap.m).
+The Matlab toolbox can be downloaded [here](https://github.com/CreativeCodingLab/BRAINtrinsic/tree/master/Matlab%20toolbox).
 
 #Acknowledgment
 
