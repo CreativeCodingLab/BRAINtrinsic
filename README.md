@@ -44,4 +44,5 @@ This research is being done in collaboration with Dr. Alex Leow, Dr. Olusola Aji
 
 #References
 **[1]** - Ye, A. Q., Zhan, L., Conrin, S., GadElKarim, J., Zhang, A., Yang, S., ... & Leow, A. (2015). Measuring embeddedness: Hierarchical scale‐dependent information exchange efficiency of the human brain connectome. Human Brain Mapping.
+
 **[2]** - van den Heuvel, M. P., & Sporns, O. (2011). Rich-club organization of the human connectome. The Journal of neuroscience, 31(44), 15775-15786.
