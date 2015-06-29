@@ -10,16 +10,16 @@ Head Mounted Displays such as Oculus Rift (both DK1 and DK2).
 
 #How to use it
 The web-based tool is accessible [here](http://creativecodinglab.github.io/BRAINtrinsic/) and there is no need of installation since it is a web-based application. It has been optimized for Google Chrome Browser.
-Users can upload data and visualize them. All the files needed are in ".csv" format and specifically should be structured are as follows:
+Users can upload data and visualize them. All the files needed are in ".csv" format and specifically should be structured as follows:
 - locations files (4): each of them contains a different file locations. Each row of the file contains three values that represent the x,y,z coordinates. Each value is separated by a coma.
 - network file: this file contains the adjacency matrix of the connectome network. Each value within the same row is separated by a coma. The tool is optimized to deal with weighted graph.
-- labelkey file: each row contains the Freesurfer Id label to which the node belongs.
+- labelkey file: each row contains the Freesurfer ID label to which the node belongs.
 
 Before uploading the file, make sure to remove the last blank row of each file, otherwise data will not be displayed correctly.
 You can find a correct dataset ready to be uploaded [here](https://github.com/CreativeCodingLab/BRAINtrinsic/tree/gh-pages/data/Demo1).
 #Virtual Reality instruction
-BRAINtrinsic is fully compatible with both DK1 and DK2 [Oculus Rift device](https://www.oculus.com/).
-To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/gh-pages/oculus-rest) (Mac OS only).
+BRAINtrinsic is fully compatible with [Oculus Rift device](https://www.oculus.com/) (both DK1 and DK2).
+To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/gh-pages/oculus-rest)(MAC OS users).
 More information about the "oculus-rest" plugin can be found [here](https://github.com/msfeldstein/oculus-rest).
 Now:
 - Plug the Oculus Rift into your computer
