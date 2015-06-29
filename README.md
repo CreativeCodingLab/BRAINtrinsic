@@ -27,7 +27,7 @@ Now:
 - Click [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=1&load=0) for DK1 version or [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=2&load=0) for DK2 demo version. If you want to upload your own data, go to the upload page and
 then select the version of Oculus Rift you are using in the radio button and finally click the "start" button.
 
-#Acknoledgement
+#Acknowledgment
 
 The tool was entirely developed by Giorgio Conte who belongs to the [Creative Coding Research Group](https://www.evl.uic.edu/creativecoding/), directed by Prof.
 Angus Forbes. The research group is part of the [Electronic Visualization Lab](https://www.evl.uic.edu) (EVL) at University of Illinois at Chicago (UIC).
