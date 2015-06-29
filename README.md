@@ -31,4 +31,4 @@ then select the version of Oculus Rift you are using in the radio button and fin
 
 The tool was entirely developed by Giorgio Conte who belongs to the [Creative Coding Research Group](https://www.evl.uic.edu/creativecoding/), directed by Prof.
 Angus Forbes. The research group is part of the [Electronic Visualization Lab](https://www.evl.uic.edu) (EVL) at University of Illinois at Chicago (UIC).
-This research is being done in collaboration with Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye, all belonging to UIC Department of Psychiatry. This project is inserted within [CoNECt@UIC](http://conect.brain.uic.edu) project, a interdisciplinary team of researchers and clinicians devoted to improving the understanding of brain connectivity.
+This research is being done in collaboration with Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye, all belonging to UIC Department of Psychiatry. This collaboration is inserted within [CoNECt@UIC](http://conect.brain.uic.edu) project, a interdisciplinary team of researchers and clinicians devoted to improving the understanding of brain connectivity.
