@@ -9,7 +9,7 @@ trees can be computed on the fly. This tool has been developed with virtual real
 Head Mounted Displays such as Oculus Rift (both DK1 and DK2).
 
 #How to use it
-The web-based tool is accessible [here](http://creativecodinglab.github.io/BRAINtrinsic/). It has been optimized for Google Chrome Browser.
+The web-based tool is accessible [here](http://creativecodinglab.github.io/BRAINtrinsic/) and there is no need of installation since it is a web-based application. It has been optimized for Google Chrome Browser.
 Users can upload data and visualize them. All the files needed are in ".csv" format and specifically should be structured are as follows:
 - locations files (4): each of them contains a different file locations. Each row of the file contains three values that represent the x,y,z coordinates. Each value is separated by a coma.
 - network file: this file contains the adjacency matrix of the connectome network. Each value within the same row is separated by a coma. The tool is optimized to deal with weighted graph.
@@ -22,8 +22,8 @@ BRAINtrinsic is fully compatible with both DK1 and DK2 [Oculus Rift device](http
 To run BRAINtrinsic in the OR compatible mode, make sure to download [oculus-rest](https://github.com/CreativeCodingLab/BRAINtrinsic/blob/gh-pages/oculus-rest) (Mac OS only).
 More information about the "oculus-rest" plugin can be found [here](https://github.com/msfeldstein/oculus-rest).
 Now:
-- Plug the HDM into your computer
-- Launch the oculus-rest plugin
+- Plug the Oculus Rift into your computer
+- Launch the "oculus-rest" plugin
 - Click [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=1&load=0) for DK1 version or [here](http://creativecodinglab.github.io/BRAINtrinsic/visualization.html?dataset=Demo1&vr=2&load=0) for DK2 demo version. If you want to upload your own data, go to the upload page and
 then select the version of Oculus Rift you are using in the radio button and finally click the "start" button.
 
