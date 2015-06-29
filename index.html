@@ -36,7 +36,7 @@
 <p> This tool has been optimized for Google Chrome Browser.
     Users can upload data and visualize them. All the files needed are in ".csv" format and specifically should be structured as follows:
     <ul>
-        <li>locations files (4): each of them contains a different file locations. Each row of the file contains three values that represent the x,y,z coordinates. Each value is separated by a comma.</li>
+        <li>Centroid files (4): each of them contains different ROI coordinates (the "centroid"). Each row of the file contains three values that represent the x,y,z coordinates. Each value is separated by a comma.</li>
         <li>network file: this file contains the adjacency matrix of the connectome network. Each value within the same row is separated by a comma. The tool is optimized to deal with weighted graph.</li>
         <li>labelkey file: each row contains the Freesurfer ID label to which the node belongs.</li>
     </ul>
@@ -67,9 +67,9 @@
         <p>
             BRAINtrinsic allows three different color coding schemas:
             <ul>
-                <li>Anatomy - nodes are divided according the neuroanatomy</li>
-                <li>Embeddedness - nodes are divided to highlight regions with high embeddedness [1]</li>
-                <li>Rich-club - nodes are divided to highlight regions which belong to the rich-club [2]</li>
+                <li>Anatomy - nodes are grouped according to their neuroanatomical locations.</li>
+                <li>Embeddedness - nodes that have been shown to be highly embedded in the human structural connectome [1] are highlighted.</li>
+                <li>Rich-club - Rich-club nodes as defined in [2] are highlighted. Note that the Rich-club regions form a subset of highly-embedded nodes.</li>
             </ul>
         </p>
 
@@ -80,7 +80,7 @@
 <p>BRAINtrinsic is the result of collaboration between computer scientists and psychiatrists. Giorgio Conte, who wrote the code of the tool, and Dr. Angus Forbes belong to <a href=" https://www.evl.uic.edu/creativecoding/")>Creative Coding Research Group</a>
     which is part of <a href="https://www.evl.uic.edu">Electronic Visualization Lab (EVL)</a> at University of Illinois of Chicago (UIC).
     Dr. Alex Leow, Dr. Olusola Ajilore, and Dr. Allen Ye belong to UIC Department of Psychiatry.
-    This collaboration is inserted within <a href="http://conect.brain.uic.edu/home">CoNECt@UIC</a> project, a interdisciplinary team of researchers and clinicians devoted to improving the understanding of brain connectivity.
+    BRAINtrinsic is an integral research component of the <a href="http://conect.brain.uic.edu/home">CoNECt@UIC</a>, an interdisciplinary team of researchers and clinicians devoted to improving the understanding of brain connectivity.
 </p>
 
 <h3>
