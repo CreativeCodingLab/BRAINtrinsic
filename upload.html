@@ -32,6 +32,53 @@
     <script type="text/javascript" src="js/graphicsUtils.js"></script>
     <script src = "js/external-libraries/message.js"></script>
     <script src = "js/utils/upload.js"></script>
+    <script src = "js/indexedDB.js"></script>
+    <script >
+        document.addEventListener("DOMContentLoaded", function(){
+
+            if("indexedDB" in window) {
+                idbSupported = true;
+            } else{
+                alert("This browser is not supporting indexedDB, so the application may not work correctly.")
+            }
+
+            if(idbSupported) {
+
+                var deleteRequest = indexedDB.deleteDatabase('db');
+
+                deleteRequest.onsuccess = function(e){
+                    console.log("db deleted successfully");
+                }
+
+                var openRequest = indexedDB.open("db",1);
+
+                openRequest.onupgradeneeded = function(e) {
+                    console.log("Upgrading...");
+                    console.log("running onupgradeneeded");
+                    var thisDB = e.target.result;
+
+                    if(!thisDB.objectStoreNames.contains("locations")) {
+                        thisDB.createObjectStore("locations");
+                    }
+
+                };
+
+                openRequest.onsuccess = function(e) {
+                    console.log("Success!");
+                    db = e.target.result;
+                };
+
+                openRequest.onerror = function(e) {
+                    console.log("Error");
+                    console.dir(e);
+                };
+
+            }
+
+        },false);
+
+
+    </script>
 
 </head>
 <body>

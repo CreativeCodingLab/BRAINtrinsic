@@ -170,24 +170,17 @@ var uploadLabelKey = function () {
 
 };
 
-var start = function () {
-   queue()
-       .defer(store)
-       .awaitAll(function(){
-           var vr = getTechnology();
-           document.location.href = 'visualization.html?dataset=null&vr='+vr+'&load=1&metric='+metric;
-       });
+var start = function(){
+    queue()
+        .defer(addItemstoDb)
+        .awaitAll(function(){
+            console.log("2 - everything has been uploaded");
+            var vr = getTechnology();
+            document.location.href = 'visualization.html?dataset=null&vr='+vr+'&load=1&metric='+metric;
+        });
 };
 
 
-var store = function(callback){
-    localStorage.setItem("labelKeys", JSON.stringify(labelKeys));
-    localStorage.setItem("centroids", JSON.stringify(centroids));
-    localStorage.setItem("normal",JSON.stringify(connectionMatrix['normal']));
-    localStorage.setItem("metricValues",JSON.stringify(metricValues));
-   // localStorage.setItem("isomap",JSON.stringify(connectionMatrix['isomap']));
-    callback(null,null);
-};
 
 var getTechnology = function () {
     if( $('#desktop').is(':checked') ){

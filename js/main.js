@@ -39,24 +39,22 @@ var stringToBoolean = function (s) {
         case 'true': return true;
         case 'false': return false;
     }
-}
+};
 
-var parse = function(callback){
-    labelKeys = JSON.parse(localStorage.getItem("labelKeys"));
-    centroids = JSON.parse(localStorage.getItem("centroids"));
-    connectionMatrix['normal'] = JSON.parse(localStorage.getItem("normal"));
-    connectionMatrix['isomap'] = JSON.parse(localStorage.getItem("normal"));
-    metricValues = JSON.parse(localStorage.getItem("metricValues"));
 
-    if(metric == true){
-        metricQuantileScale  = d3.scale.quantile()
-            .domain(metricValues)
-            .range(['#000080','#0000c7','#0001ff','#0041ff','#0081ff','#00c1ff','#16ffe1','#49ffad',
-                '#7dff7a','#b1ff46','#e4ff13','#ffd000','#ff9400','#ff5900','#ff1e00','#c40000']);
-    }
+var loadAllData = function(callback){
 
-    callback(null,null);
-}
+    queue()
+        .defer(queryCentroids)
+        .defer(queryConnections)
+        .defer(queryLabelKey)
+        .defer(queryMetricValue)
+        .awaitAll(function () {
+            callback(null,null)
+        })
+};
+
+
 
 
 var folder = getQueryVariable("dataset");
@@ -89,27 +87,9 @@ if(isLoaded == 0) {
     queue()
         .defer(loadLookUpTable)
         .defer(loadIcColors)
-        .defer(parse)
+        .defer(opendb)
         .awaitAll(function(){
             init();
         })
 }
 
-
-/*
- queue()
- .defer(loadLookUpTable)
- .awaitAll(function(){
- init();
- });
-
-
-init = function () {
-    initGUI();
-};*/
-
-
-/*
- $( document ).ready(function() {
- init();
- });*/
