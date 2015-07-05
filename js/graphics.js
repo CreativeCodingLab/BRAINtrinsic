@@ -1021,5 +1021,3 @@ drawSelectedNode = function (nodeIndex, mesh) {
 
     return createSelectedGeometry(mesh.userData['hemisphere'])
 };
-
-
