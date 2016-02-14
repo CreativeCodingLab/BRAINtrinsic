@@ -112,6 +112,7 @@ var round = function(number, digits){
 }
 
 
+
 var foo = function(){
     loadMetricValues();
 }
