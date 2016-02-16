@@ -8,6 +8,7 @@ private variables
 var spheres;
 var groups = [];
 var labelKeys;
+var atlas;
 var centroids = [];
 var activeGroup = 0;
 var activeCentroids = "isomap";
@@ -59,6 +60,38 @@ getMaximumDistance = function(){
 
 setLabelKeys = function(labels){
     labelKeys = labels.data;
+};
+
+/**
+ * Set Atlas Data
+ */
+
+setAtlas = function(d){
+    console.log("Setting Atlas");
+    var i, el;
+
+    god = d;
+
+    atlas = [];
+
+    for(i = 0; i < d.data.length ; i++){
+        console.log("looping");
+        el = {"group": d.data[i].group,
+            "color": d.data[i].color,
+            "place" : d.data[i].place,
+            "rich_club":d.data[i].rich_club,
+            "region_name":d.data[i].region_name,
+            "hemisphere": d.data[i].hemisphere
+        };
+        console.log(el);
+
+        atlas[d.data[i].label] = el;
+        var labelInfo = [];
+        labelInfo['name'] = d.data[i].region_name;
+        labelInfo['visibility'] = true;
+        labelInfo['hemisphere'] = d.data[i].hemisphere;
+        labelVisibility[d.data[i].label] = labelInfo;
+    }
 };
 
 /**

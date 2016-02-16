@@ -150,6 +150,7 @@ var addItemstoDb = function(callback){
         .defer(addData,labelKeys,"labelKeys")
         .defer(addData,connectionMatrix['normal'],"connectionMatrix")
         .defer(addData,metricValues,"metricValues")
+        .defer(addData,atlas,"atlas")
         .awaitAll(function(){
             console.log("1 - everything has been uploaded");
             callback(null,null)
@@ -166,4 +167,4 @@ var getDbNames = function(){
         console.log(e.target.result);
     }
 
-}
+};

@@ -145,7 +145,7 @@ var loadColorMap = function(callback){
             callback(null,null);
         }
     })
-}
+};
 
 
 var loadMetricValues = function(callback){
@@ -160,4 +160,8 @@ var loadMetricValues = function(callback){
             callback(null,null);
         }
     })
-}
+};
+
+
+
+

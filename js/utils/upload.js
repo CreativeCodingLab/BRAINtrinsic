@@ -98,7 +98,6 @@ var uploadMDSCentroids = function(){
     }
 };
 
-
 var uploadtSNECentroids = function(){
     var f = document.getElementById("tsneCentroid");
     if (f.files && f.files[0]) {
@@ -161,6 +160,32 @@ var uploadLabelKey = function () {
                         d3.select('#labelKeyBtn').attr('class','load');
                         dhtmlx.message("Label Keys Uploaded");
 
+                    }
+                }
+            )
+        };
+        reader.readAsDataURL(f.files[0]);
+    }
+
+};
+
+
+
+var uploadAtlas = function() {
+    var f = document.getElementById("atlas");
+    if (f.files && f.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var v = e.target.result;
+            Papa.parse(v, {
+                    download: true,
+                    delimiter: ";",
+                    dynamicTyping: true,
+                    header: true,
+                    complete: function (results) {
+                        setAtlas(results);
+                        d3.select('#atlasBtn').attr('class','load');
+                        dhtmlx.message("Atlas Uploaded");
                     }
                 }
             )
