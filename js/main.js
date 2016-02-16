@@ -49,6 +49,7 @@ var loadAllData = function(callback){
         .defer(queryConnections)
         .defer(queryLabelKey)
         .defer(queryMetricValue)
+        .defer(queryAtlas)
         .awaitAll(function () {
             callback(null,null)
         })

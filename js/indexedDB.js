@@ -83,6 +83,26 @@ var queryLabelKey = function(callback){
     }
 };
 
+/* addedd for atlas */
+
+var queryAtlas = function(callback){
+    var transaction = db.transaction(["locations"],"readonly");
+    var objectStore = transaction.objectStore("locations");
+    var query = objectStore.get("atlas");
+
+    query.onsuccess = function(e) {
+        console.log("atlas done");
+        //atlas = e.target.result;
+        lookUpTable = e.target.result;
+        callback(null,null)
+    }
+
+    query.onerror = function(e){
+        console.log("error");
+        alert("Atlas can't be found!");
+    }
+};
+
 var queryMetricValue = function (callback) {
     var transaction = db.transaction(["locations"],"readonly");
     var objectStore = transaction.objectStore("locations");

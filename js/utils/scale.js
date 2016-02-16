@@ -25,7 +25,10 @@ var colorMap = {
     'Cingulate':'#ff7f0e',
     'Caudate':'#ad494a'
 
-}
+};
+
+
+
 
 scaleColorGroup = function (group, nodeIndex) {
     nodeIndex = (typeof nodeIndex === 'undefined') ? -1 : nodeIndex;
@@ -51,6 +54,12 @@ scaleColorGroup = function (group, nodeIndex) {
     if(colorMap[filteredGroup] != undefined){
         color = colorMap[filteredGroup];
        
+    }
+
+    if(nodeIndex >= 0) {
+        console.log("nodeIndex: " + nodeIndex);
+        //color = atlas[labelKeys[nodeIndex]].color;
+        color = lookUpTable[labelKeys[nodeIndex]].color;
     }
 
     if(activeGroup == 3){
