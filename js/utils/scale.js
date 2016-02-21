@@ -57,7 +57,7 @@ scaleColorGroup = function (group, nodeIndex) {
     }
 
     if(nodeIndex >= 0) {
-        console.log("nodeIndex: " + nodeIndex);
+
         //color = atlas[labelKeys[nodeIndex]].color;
         color = lookUpTable[labelKeys[nodeIndex]].color;
     }

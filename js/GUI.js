@@ -669,7 +669,7 @@ addGroupList = function () {
         .attr("for","anatomy")
         .text("Anatomy");
 
-    menu.append("br")
+    /*menu.append("br")
 
     menu.append("input")
         .attr("type", "radio")
@@ -699,7 +699,7 @@ addGroupList = function () {
     menu.append("label")
         .attr("for","richClub")
         .text("Rich Club");
-
+    */
     menu.append("br");
 
     /*
@@ -864,6 +864,7 @@ addGeometryRadioButton = function () {
         .text("Topological Space:");
     menu.append("br");
 
+    /*
     menu.append("input")
         .attr("type", "radio")
         .attr("name","geometry")
@@ -893,7 +894,7 @@ addGeometryRadioButton = function () {
         .attr("for","mds")
         .text("MDS");
 
-    menu.append("br")
+    menu.append("br");
 
     menu.append("input")
         .attr("type", "radio")
@@ -909,12 +910,13 @@ addGeometryRadioButton = function () {
         .attr("for","tsne")
         .text("tSNE");
 
-    menu.append("br");
+    menu.append("br");*/
 
     menu.append("input")
         .attr("type", "radio")
         .attr("name","geometry")
         .attr("value","anatomy")
+        .attr("checked",true)
         .attr("id","anatomy")
         .on("change", function () {
 
@@ -923,7 +925,7 @@ addGeometryRadioButton = function () {
 
     menu.append("label")
         .attr("for","anatomy")
-        .text("anatomy");
+        .text("Anatomy");
 
     menu.append("br");
 
