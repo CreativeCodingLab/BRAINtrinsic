@@ -70,7 +70,6 @@ setAtlas = function(d){
     console.log("Setting Atlas");
     var i, el;
 
-    god = d;
 
     atlas = [];
 
@@ -92,6 +91,7 @@ setAtlas = function(d){
         labelInfo['hemisphere'] = d.data[i].hemisphere;
         labelVisibility[d.data[i].label] = labelInfo;
     }
+    lookUpTable = atlas;
 };
 
 /**

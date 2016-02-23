@@ -86,7 +86,7 @@ if(isLoaded == 0) {
     console.log("loaded from different files");
 
     queue()
-        .defer(loadLookUpTable)
+        //.defer(loadLookUpTable)
         .defer(loadIcColors)
         .defer(opendb)
         .awaitAll(function(){

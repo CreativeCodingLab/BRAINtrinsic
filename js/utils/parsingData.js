@@ -80,14 +80,15 @@ var loadCentroidstSNE = function (callback) {
 };
 
 var loadLookUpTable = function (callback) {
-    Papa.parse("data/LookupTable.csv", {
+    Papa.parse("data/atlas_1.csv", {
         download: true,
         delimiter: ";",
         dynamicTyping: true,
         header: true,
         complete: function (results) {
-            setLookUpTable(results);
-            console.log("lookup");
+            /*setLookUpTable(results);*/
+            setAtlas(results);
+            console.log("ATLAS");
             callback(null, null);
         }
     });

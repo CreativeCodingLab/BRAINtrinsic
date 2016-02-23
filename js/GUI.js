@@ -864,7 +864,7 @@ addGeometryRadioButton = function () {
         .text("Topological Space:");
     menu.append("br");
 
-    /*
+
     menu.append("input")
         .attr("type", "radio")
         .attr("name","geometry")
@@ -878,7 +878,7 @@ addGeometryRadioButton = function () {
         .attr("for","isomap")
         .text("Isomap");
 
-    menu.append("br")
+    menu.append("br");
 
     menu.append("input")
         .attr("type", "radio")
@@ -910,13 +910,12 @@ addGeometryRadioButton = function () {
         .attr("for","tsne")
         .text("tSNE");
 
-    menu.append("br");*/
+    menu.append("br");
 
     menu.append("input")
         .attr("type", "radio")
         .attr("name","geometry")
         .attr("value","anatomy")
-        .attr("checked",true)
         .attr("id","anatomy")
         .on("change", function () {
 
@@ -929,7 +928,7 @@ addGeometryRadioButton = function () {
 
     menu.append("br");
 
-}
+};
 
 
 addFslRadioButton = function () {

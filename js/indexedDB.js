@@ -39,13 +39,13 @@ var queryCentroids = function (callback) {
         console.log("centroids done");
         centroids = e.target.result;
         callback(null,null)
-    }
+    };
 
     query.onerror = function(e){
         console.log("error");
         alert("centroids can't be found!");
     }
-}
+};
 
 
 var queryConnections = function(callback){
@@ -93,7 +93,17 @@ var queryAtlas = function(callback){
     query.onsuccess = function(e) {
         console.log("atlas done");
         //atlas = e.target.result;
+
+        e.target.result.forEach(function(el,i){
+            console.log("Setting LabelInfo");
+            var labelInfo = [];
+            labelInfo['name'] = el.region_name;
+            labelInfo['visibility'] = true;
+            labelInfo['hemisphere'] = el.hemisphere;
+            labelVisibility[i] = labelInfo;
+        });
         lookUpTable = e.target.result;
+
         callback(null,null)
     }
 
