@@ -113,7 +113,7 @@ var loadConnections = function(callback){
         delimiter: ',',
         header: false,
         complete: function(results){
-            setConnectionMatrix(results, 'normal');
+            setConnectionMatrix(results, 0);
             //computeDistanceMatrix();
             callback(null,null);
         }
@@ -121,13 +121,13 @@ var loadConnections = function(callback){
 };
 
 var loadConnectionsIsomap = function(callback){
-    Papa.parse("data/"+folder+"/isomapNW.csv",{
+    Papa.parse("data/"+folder+"/nw_1.csv",{
         download: true,
         dynamicTyping: true,
         delimiter: ',',
         header: false,
         complete: function(results){
-            setConnectionMatrix(results, 'isomap');
+            setConnectionMatrix(results, 1);
             //computeDistanceMatrix();
             callback(null,null);
         }

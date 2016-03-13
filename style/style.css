@@ -166,6 +166,16 @@ button > input[type="checkbox"]{
     color: #000000;
 }
 
+#timeSliderDiv {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    bottom: 10px;
+    right:300px;
+    z-index: 2;
+    display: none;
+}
+
 .label{
     color: black;
 }

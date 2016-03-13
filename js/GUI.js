@@ -171,6 +171,10 @@ initGUI = function() {
 
 
 
+
+
+
+
 };
 
 /*
@@ -291,6 +295,42 @@ addThresholdSlider = function (){
     setThreshold(Math.floor(getMaximumWeight()*100/2)/100);
 
     document.getElementById("thresholdOutput").value = getThreshold();
+
+
+    menu.append("br");
+
+    menu.append("label")
+        .attr("for", "timeSlider")
+        .attr("id", "timeSliderLabel")
+        .text("Time");
+    menu.append("br");
+
+    menu.append("input")
+        .attr("type", "range")
+        .attr("value", 1)
+        .attr("id", "timeSlider")
+        .attr("min",1)
+        .attr("max", getNumberOfTimeSteps())
+        .attr("step",1)
+        .on("change", function () {
+            var slider = document.getElementById("timeSlider");
+            document.getElementById("timeOutput").value = slider.value;
+
+            activeMatrix = slider.value - 1;
+
+            var thresholdSlider = document.getElementById("thresholdSlider");
+            thresholdSlider.max = getMaximumWeight();
+            thresholdSlider.step = getMaximumWeight()/1000;
+
+
+            updateScene();
+        });
+
+    menu.append("output")
+        .attr("for","timeSlider")
+        .attr("id", "timeOutput");
+
+    document.getElementById("timeOutput").value = 1;
 
 
 };

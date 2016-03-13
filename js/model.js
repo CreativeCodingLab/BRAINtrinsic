@@ -18,7 +18,7 @@ var labelVisibility = [];
 
 var icColorTable = [];
 
-var activeMatrix = 'isomap';
+var activeMatrix = '0';
 
 var lookUpTable = [];
 
@@ -34,7 +34,9 @@ var metricValues = [];
 var numberOfHops;
 
 
-
+getNumberOfTimeSteps = function () {
+    return connectionMatrix.length;
+}
 
 /*
 Setters
@@ -160,8 +162,8 @@ setLookUpTable = function (d) {
 };
 
 
-setConnectionMatrix = function(d, name){
-    connectionMatrix[name] = d.data;
+setConnectionMatrix = function(d, timestep){
+    connectionMatrix[timestep] = d.data;
     console.log("connectionMatrix set");
 };
 
@@ -410,7 +412,8 @@ setRegionsActivated = function (){
 
 
 getConnectionMatrixDimension = function(){
-    return connectionMatrix['isomap'].length;
+    //return connectionMatrix['isomap'];
+    return connectionMatrix[activeMatrix].length;
 }
 
 
@@ -429,7 +432,7 @@ getTopConnectionsByNode = function(indexNode, n){
 
 getMaximumWeight = function () {
 
-    var max = d3.max(connectionMatrix['normal'], function(d){
+    var max = d3.max(connectionMatrix[activeMatrix], function(d){
         return d3.max(d, function(d){
             return d;
         })
