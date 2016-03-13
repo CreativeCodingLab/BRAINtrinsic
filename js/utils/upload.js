@@ -28,24 +28,41 @@ var uploadAnatomyCentroids = function () {
 uploadNormalConnections = function () {
     var f = document.getElementById("anatomyConnections");
     if (f.files && f.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var v = e.target.result;
-            Papa.parse(v, {
-                    download: true,
-                    dynamicTyping: true,
-                    delimiter: ',',
-                    header: false,
-                    complete: function (results) {
-                        setConnectionMatrix(results, 0);
-                        setConnectionMatrix(results, 1);
-                        d3.select('#connectionsBtn').attr('class','load');
-                        dhtmlx.message("Adjacency Matrix Uploaded");
-                    }
-                }
-            )
-        };
-        reader.readAsDataURL(f.files[0]);
+
+        for(var i = 0; i < f.files.length; i++) {
+            var file = f.files[i];
+            var reader = new FileReader();
+
+            file.timestep = i;
+            console.log("Looping "+ file.timestep);
+
+            reader.onload = (function(file){
+                var timestep = file.timestep;
+
+                return function(e){
+                    var v = e.target.result;
+
+                    Papa.parse(v, {
+                            download: true,
+                            dynamicTyping: true,
+                            delimiter: ',',
+                            header: false,
+                            complete: function (results) {
+                                console.log("Value of i: " + timestep);
+                                setConnectionMatrix(results, timestep);
+                                //setConnectionMatrix(results, 1);
+                                d3.select('#connectionsBtn').attr('class','load');
+                                dhtmlx.message("Adjacency Matrix Uploaded");
+                            }
+                        }
+                    )
+                };
+            })(file);
+
+
+            reader.readAsDataURL(f.files[i]);
+        }
+
     }
 
 };

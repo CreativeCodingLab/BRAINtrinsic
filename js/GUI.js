@@ -321,6 +321,8 @@ addThresholdSlider = function (){
             var thresholdSlider = document.getElementById("thresholdSlider");
             thresholdSlider.max = getMaximumWeight();
             thresholdSlider.step = getMaximumWeight()/1000;
+            document.getElementById("thresholdOutput").value = getThreshold();
+
 
 
             updateScene();

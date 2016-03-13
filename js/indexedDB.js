@@ -54,9 +54,11 @@ var queryConnections = function(callback){
     var query = objectStore.get("connectionMatrix");
 
     query.onsuccess = function(e) {
+
         console.log("matrix done");
-        connectionMatrix[0] = e.target.result;
-        connectionMatrix[1] = e.target.result;
+        connectionMatrix = e.target.result;
+        //connectionMatrix[0] = e.target.result;
+        //connectionMatrix[1] = e.target.result;
         callback(null,null)
     }
 
@@ -178,7 +180,7 @@ var addItemstoDb = function(callback){
     queue()
         .defer(addData,centroids,"centroids")
         .defer(addData,labelKeys,"labelKeys")
-        .defer(addData,connectionMatrix[0],"connectionMatrix")
+        .defer(addData,connectionMatrix,"connectionMatrix")
         .defer(addData,metricValues,"metricValues")
         .defer(addData,atlas,"atlas")
         .awaitAll(function(){
