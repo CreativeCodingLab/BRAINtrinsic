@@ -55,8 +55,8 @@ var queryConnections = function(callback){
 
     query.onsuccess = function(e) {
         console.log("matrix done");
-        connectionMatrix['normal'] = e.target.result;
-        connectionMatrix['isomap'] = e.target.result;
+        connectionMatrix[0] = e.target.result;
+        connectionMatrix[1] = e.target.result;
         callback(null,null)
     }
 
@@ -178,7 +178,7 @@ var addItemstoDb = function(callback){
     queue()
         .defer(addData,centroids,"centroids")
         .defer(addData,labelKeys,"labelKeys")
-        .defer(addData,connectionMatrix['normal'],"connectionMatrix")
+        .defer(addData,connectionMatrix[0],"connectionMatrix")
         .defer(addData,metricValues,"metricValues")
         .defer(addData,atlas,"atlas")
         .awaitAll(function(){
