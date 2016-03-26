@@ -17,7 +17,8 @@ var loadCentroidsMDS = function (callback) {
         delimiter: ",",
         dynamicTyping: true,
         complete: function (results) {
-            setCentroids(results, "MDS");
+            //setCentroids(results, "MDS");
+            setCentroids(results,"anatomy",1)
             callback(null, null);
         }
     });
@@ -31,7 +32,7 @@ var loadCentroidsAnatomy = function (callback){
         dynamicTyping: true,
         error:"continue",
         complete: function (results) {
-            setCentroids(results, "anatomy");
+            setCentroids(results, "anatomy", 0);
             callback(null, null);
         }
     });
@@ -58,7 +59,7 @@ var loadCentroidsIsomap = function (callback) {
         delimiter: ",",
         dynamicTyping: true,
         complete: function (results) {
-            setCentroids(results, "isomap");
+            setCentroids(results, "isomap", 0);
             callback(null, null);
         }
     });
@@ -72,7 +73,7 @@ var loadCentroidstSNE = function (callback) {
         delimiter: ",",
         dynamicTyping: true,
         complete: function (results) {
-            setCentroids(results, "tsne");
+            setCentroids(results, "tsne", 0);
             callback(null, null);
         }
     });

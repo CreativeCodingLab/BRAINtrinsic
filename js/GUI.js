@@ -323,8 +323,9 @@ addThresholdSlider = function (){
             thresholdSlider.step = getMaximumWeight()/1000;
             document.getElementById("thresholdOutput").value = getThreshold();
 
-
-
+            // this is to make the transition smooth
+            animationNeeded = true;
+            oldSpheres = spheres.slice();
             updateScene();
         });
 

@@ -559,7 +559,7 @@ var drawRegions = function(dataset) {
                 target.x = x;
                 target.y = y;
                 target.z = z;
-                console.log("oldspheres: " + oldSpheres[i].position.x);
+
                 spheres[i].position.set(oldSpheres[i].position.x,oldSpheres[i].position.y,oldSpheres[i].position.z);
                 if (i == l-1){
                     isLast = true;

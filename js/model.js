@@ -101,7 +101,7 @@ setAtlas = function(d){
  */
 
 
-setCentroids = function (d, technique) {
+setCentroids = function (d, technique, timestep) {
     var data = d.data;
     var len = data.length;
     var centroidGroup;
@@ -112,7 +112,10 @@ setCentroids = function (d, technique) {
         element.y = data[i][1];
         element.z = data[i][2];
         centroids[i] = centroids[i] || {};
-        centroids[i][technique] = element;
+        // the first time it is an empty array, for timestep 1 the array is already partially filled
+        centroids[i][technique] = centroids[i][technique] || [];
+
+        centroids[i][technique][timestep] = element;
 
     }
 };
@@ -272,9 +275,10 @@ getDataset = function() {
         row = {};
 
         //getting Centroids
-        row.x = centroids[i][activeCentroids].x;
-        row.y = centroids[i][activeCentroids].y;
-        row.z = centroids[i][activeCentroids].z;
+        // activeMatrix as timestep
+        row.x = centroids[i][activeCentroids][activeMatrix].x;
+        row.y = centroids[i][activeCentroids][activeMatrix].y;
+        row.z = centroids[i][activeCentroids][activeMatrix].z;
 
 
         var label = labelKeys[i];
