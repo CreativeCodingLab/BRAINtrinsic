@@ -566,6 +566,7 @@ var drawRegions = function(dataset) {
                 }
                 moveObject(spheres[i].position, target, isLast);
                 //spheres[i].position.set(x, y, z);
+                spheres[i].position.set(x, y, z);
             } else {
                 spheres[i].position.set(x, y, z);
             }
