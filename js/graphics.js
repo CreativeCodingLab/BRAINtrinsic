@@ -874,11 +874,11 @@ changeColorGroup = function (n) {
 
 changeActiveGeometry = function(n){
     activeCentroids = n;
-    if(n == 'isomap'){
+    /*if(n == 'isomap'){
         activeMatrix = 'isomap';
     }else{
         activeMatrix = 'normal';
-    }
+    }*/
 
     updateNeeded = true;
     computeDistanceMatrix();
