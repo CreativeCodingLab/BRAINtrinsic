@@ -40,6 +40,9 @@ var spt = false;
 
 var click = true;
 
+var animationNeeded = false;
+var oldSpheres;
+
 
 
 
@@ -364,6 +367,7 @@ initCanvas = function () {
 
 updateScene = function(){
     var l = spheres.length;
+
     for (var i=0; i < l; i++){
         scene.remove(spheres[i]);
     }
@@ -382,6 +386,31 @@ updateScene = function(){
 };
 
 
+//TWEEN function
+var  moveObject = function(sourcePosition,targetPosition, isLast) {
+    /*console.log("Animating!!! wooo!");
+    console.log("moving from:" + sourcePosition.x + "," +sourcePosition.y + ","+sourcePosition.z);
+    console.log("to:" + targetPosition.x + "," + targetPosition.y + "," + targetPosition.z);*/
+
+    if( !isLast) {
+        new TWEEN.Tween(sourcePosition)
+            .to(targetPosition, 2000)
+            .easing(TWEEN.Easing.Sinusoidal.In)
+            .start()
+    } else {
+        new TWEEN.Tween(sourcePosition)
+            .to(targetPosition, 2000)
+            .easing(TWEEN.Easing.Sinusoidal.In)
+            .start()
+            .onComplete(function () {
+            animationNeeded = false;
+        });
+    }
+
+};
+
+
+
 
 
 animate = function () {
@@ -397,7 +426,10 @@ animate = function () {
     if(vr > 0 ) {
         oculuscontrol.update();
     }
+
+
     render();
+
 
 };
 
@@ -409,6 +441,11 @@ render = function() {
 
     // Use the following line to render the scene on the oculus rift
     //effect.render( scene, camera );
+
+
+     if(animationNeeded){
+        TWEEN.update();
+     };
 
     if(vr == 0){
         renderer.render(scene, camera);
@@ -512,7 +549,26 @@ var drawRegions = function(dataset) {
             var y = centroidScale(dataset[i].y) - yCentroid;
             var z = centroidScale(dataset[i].z) - zCentroid;
 
-            spheres[i].position.set(x, y, z);
+
+
+            if (animationNeeded){
+
+                var target = {};
+                var isLast = false;
+
+                target.x = x;
+                target.y = y;
+                target.z = z;
+                console.log("oldspheres: " + oldSpheres[i].position.x);
+                spheres[i].position.set(oldSpheres[i].position.x,oldSpheres[i].position.y,oldSpheres[i].position.z);
+                if (i == l-1){
+                    isLast = true;
+                }
+                moveObject(spheres[i].position, target, isLast);
+                //spheres[i].position.set(x, y, z);
+            } else {
+                spheres[i].position.set(x, y, z);
+            }
 
             sphereNodeDictionary[spheres[i].uuid] = i;
 
@@ -881,12 +937,17 @@ changeActiveGeometry = function(n){
     }*/
 
     updateNeeded = true;
+    animationNeeded = true;
     computeDistanceMatrix();
+
+
 
 
     for(var i=0; i < spheres.length; i++){
         scene.remove(spheres[i]);
     }
+
+    oldSpheres = spheres.slice();
     spheres = [];
     //TODO: switch according to spt
 
