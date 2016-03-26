@@ -11,7 +11,7 @@ var labelKeys;
 var atlas;
 var centroids = [];
 var activeGroup = 0;
-var activeCentroids = "isomap";
+var activeCentroids = "anatomy";
 var connectionMatrix = [];
 var regionsActivated = [];
 var labelVisibility = [];

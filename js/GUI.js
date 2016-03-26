@@ -912,7 +912,6 @@ addGeometryRadioButton = function () {
         .attr("name","geometry")
         .attr("id","isomap")
         .attr("value","isomap")
-        .attr("checked","true")
         .on("change", function () {
             changeActiveGeometry(this.value);
         });
@@ -959,6 +958,7 @@ addGeometryRadioButton = function () {
         .attr("name","geometry")
         .attr("value","anatomy")
         .attr("id","anatomy")
+        .attr("checked","true")
         .on("change", function () {
 
             changeActiveGeometry(this.value);
