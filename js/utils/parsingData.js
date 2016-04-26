@@ -17,7 +17,8 @@ var loadCentroidsMDS = function (callback) {
         delimiter: ",",
         dynamicTyping: true,
         complete: function (results) {
-            //setCentroids(results, "MDS");
+            setCentroids(results, "MDS",0);
+            setCentroids(results, "MDS",1);
             setCentroids(results,"anatomy",1)
             callback(null, null);
         }
@@ -60,6 +61,8 @@ var loadCentroidsIsomap = function (callback) {
         dynamicTyping: true,
         complete: function (results) {
             setCentroids(results, "isomap", 0);
+            setCentroids(results, "isomap", 1);
+            setCentroids(results, "anatomy", 2);
             callback(null, null);
         }
     });
@@ -74,6 +77,7 @@ var loadCentroidstSNE = function (callback) {
         dynamicTyping: true,
         complete: function (results) {
             setCentroids(results, "tsne", 0);
+            setCentroids(results, "tsne", 1);
             callback(null, null);
         }
     });
@@ -115,6 +119,7 @@ var loadConnections = function(callback){
         header: false,
         complete: function(results){
             setConnectionMatrix(results, 0);
+            setConnectionMatrix(results, 2);
             //computeDistanceMatrix();
             callback(null,null);
         }

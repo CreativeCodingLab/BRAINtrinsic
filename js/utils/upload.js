@@ -5,23 +5,31 @@
 var uploadAnatomyCentroids = function () {
     var f = document.getElementById("anatomyCentroids");
     if (f.files && f.files[0]) {
-        var reader = new FileReader();
+        for(var i=0; i < f.files.length; i++) {
+            var file = f.files[i];
+            var reader = new FileReader();
+            file.timestep = i;
 
-        reader.onload = function (e) {
-            var v = e.target.result;
-            Papa.parse(v, {
-                    download: true,
-                    delimiter: ",",
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        setCentroids(results, "anatomy");
-                        d3.select('#anatomyBtn').attr('class','load');
-                        dhtmlx.message("Anatomical Centroids Uploaded");
-                    }
-                }
-            )
-        };
-        reader.readAsDataURL(f.files[0]);
+            reader.onload = (function (file) {
+                var timestep = file.timestep;
+
+                return function (e) {
+                    var v = e.target.result;
+                    Papa.parse(v, {
+                            download: true,
+                            delimiter: ",",
+                            dynamicTyping: true,
+                            complete: function (results) {
+                                setCentroids(results, "anatomy", timestep);
+                                d3.select('#anatomyBtn').attr('class', 'load');
+                                dhtmlx.message("Anatomical Centroids Uploaded");
+                            }
+                        }
+                    )
+                };
+            })(file);
+            reader.readAsDataURL(f.files[i]);
+        }
     }
 };
 
@@ -48,7 +56,7 @@ uploadNormalConnections = function () {
                             delimiter: ',',
                             header: false,
                             complete: function (results) {
-                                console.log("Value of i: " + timestep);
+                                //console.log("Value of i: " + timestep);
                                 setConnectionMatrix(results, timestep);
                                 //setConnectionMatrix(results, 1);
                                 d3.select('#connectionsBtn').attr('class','load');
@@ -70,72 +78,101 @@ uploadNormalConnections = function () {
 
 var uploadIsomapCentroids = function(){
     var f = document.getElementById("isomapCentroid");
-    if (f.files && f.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var v = e.target.result;
-            Papa.parse(v, {
-                    download: true,
-                    delimiter: ",",
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        setCentroids(results, "isomap");
-                        d3.select('#isomapBtn').attr('class','load');
-                        dhtmlx.message("Isomap Centroids Uploaded");
 
-                    }
-                }
-            )
-        };
-        reader.readAsDataURL(f.files[0]);
+    if (f.files && f.files[0]) {
+        for(var i=0; i < f.files.length; i++) {
+            var file = f.files[i];
+            var reader = new FileReader();
+            file.timestep = i;
+
+            reader.onload = (function (file) {
+                var timestep = file.timestep;
+
+                return function (e) {
+                    var v = e.target.result;
+                    Papa.parse(v, {
+                            download: true,
+                            delimiter: ",",
+                            dynamicTyping: true,
+                            complete: function (results) {
+                                setCentroids(results, "isomap",timestep);
+                                d3.select('#isomapBtn').attr('class','load');
+                                dhtmlx.message("Isomap Centroids Uploaded");
+                            }
+                        }
+                    )
+                };
+            })(file);
+            reader.readAsDataURL(f.files[i]);
+        }
     }
+
 };
 
 
 var uploadMDSCentroids = function(){
     var f = document.getElementById("mdsCentroid");
-    if (f.files && f.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var v = e.target.result;
-            Papa.parse(v, {
-                    download: true,
-                    delimiter: ",",
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        setCentroids(results, "MDS");
-                        d3.select('#mdsBtn').attr('class','load');
-                        dhtmlx.message("MDS Centroids Uploaded");
 
-                    }
-                }
-            )
-        };
-        reader.readAsDataURL(f.files[0]);
+    if (f.files && f.files[0]) {
+        for(var i=0; i < f.files.length; i++) {
+            var file = f.files[i];
+            var reader = new FileReader();
+            file.timestep = i;
+
+            reader.onload = (function (file) {
+                var timestep = file.timestep;
+
+                return function (e) {
+                    var v = e.target.result;
+                    Papa.parse(v, {
+                            download: true,
+                            delimiter: ",",
+                            dynamicTyping: true,
+                            complete: function (results) {
+                                setCentroids(results, "MDS",timestep);
+                                d3.select('#mdsBtn').attr('class','load');
+                                dhtmlx.message("MDS Centroids Uploaded");
+                            }
+                        }
+                    )
+                };
+            })(file);
+            reader.readAsDataURL(f.files[i]);
+        }
     }
 };
 
 var uploadtSNECentroids = function(){
     var f = document.getElementById("tsneCentroid");
-    if (f.files && f.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var v = e.target.result;
-            Papa.parse(v, {
-                    download: true,
-                    delimiter: ",",
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        setCentroids(results, "tsne");
-                        d3.select('#tsneBtn').attr('class','load');
-                        dhtmlx.message("tSNE Centroids Uploaded");
 
-                    }
-                }
-            )
-        };
-        reader.readAsDataURL(f.files[0]);
+    if (f.files && f.files[0]) {
+        for(var i=0; i < f.files.length; i++) {
+            var file = f.files[i];
+            var reader = new FileReader();
+            file.timestep = i;
+
+            reader.onload = (function (file) {
+                var timestep = file.timestep;
+
+                return function (e) {
+                    var v = e.target.result;
+                    Papa.parse(v, {
+                            download: true,
+                            delimiter: ",",
+                            dynamicTyping: true,
+                            complete: function (results) {
+                                setCentroids(results, "tsne",timestep);
+                                d3.select('#tsneBtn').attr('class','load');
+                                dhtmlx.message("tSNE Centroids Uploaded");
+                            }
+                        }
+                    )
+                };
+            })(file);
+            reader.readAsDataURL(f.files[i]);
+        }
     }
+
 };
 
 var uploadCustomMetric = function () {
