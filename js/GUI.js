@@ -918,7 +918,7 @@ addGeometryRadioButton = function () {
         });
     menu.append("label")
         .attr("for","isomap")
-        .text("Isomap");
+        .text("Embedding 1");
 
     menu.append("br");
 
@@ -934,7 +934,7 @@ addGeometryRadioButton = function () {
 
     menu.append("label")
         .attr("for","mds")
-        .text("MDS");
+        .text("Embedding 2");
 
     menu.append("br");
 
@@ -950,7 +950,7 @@ addGeometryRadioButton = function () {
 
     menu.append("label")
         .attr("for","tsne")
-        .text("tSNE");
+        .text("Embedding 3");
 
     menu.append("br");
 
