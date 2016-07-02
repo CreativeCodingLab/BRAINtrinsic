@@ -307,14 +307,14 @@ addThresholdSlider = function (){
 
     menu.append("input")
         .attr("type", "range")
-        .attr("value", 1)
+        .attr("value", 1 )
         .attr("id", "timeSlider")
         .attr("min",1)
         .attr("max", getNumberOfTimeSteps())
         .attr("step",1)
         .on("change", function () {
             var slider = document.getElementById("timeSlider");
-            document.getElementById("timeOutput").value = slider.value;
+            document.getElementById("timeOutput").value = slider.value + " / " + getNumberOfTimeSteps();
 
             activeMatrix = slider.value - 1;
 
@@ -331,9 +331,10 @@ addThresholdSlider = function (){
 
     menu.append("output")
         .attr("for","timeSlider")
-        .attr("id", "timeOutput");
+        .attr("id", "timeOutput")
+    ;
 
-    document.getElementById("timeOutput").value = 1;
+    document.getElementById("timeOutput").value = 1 + " / " + getNumberOfTimeSteps();
 
 
 };
@@ -357,12 +358,6 @@ setInfoLabel = function(regionName, index){
     label.setAttribute("left", "100px");
     label.setAttribute("z-index", "9");
     label.setAttribute("bottom", "200px");
-
-    var para = document.createElement("p");
-    var node = document.createTextNode("CIAO");
-
-
-    body.appendChild(label).appendChild(para).appendChild(node);
 
 
     /*
